@@ -24,6 +24,10 @@ public class TreeNode {
     public String toString() {
         String left = Objects.isNull(this.left) ? "null" : this.left.toString();
         String right = Objects.isNull(this.right) ? "null" : this.right.toString();
-        return "[" + this.val + "," + left + "," + right + "]";
+        if (this.left == null && this.right == null) {
+            return "new TreeNode("+this.val+");";
+        }
+        return "new TreeNode("+this.val+","+left+","+right+");";
+
     }
 }
